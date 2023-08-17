@@ -1,3 +1,4 @@
 Soy el archivo a1
 
 he cambiado a otro mejor 
+estuve untracked mucho tiempo ahora estoy staged
