@@ -46,18 +46,7 @@ calcularValorTotal = function(){
         */
     valorParaCalcularIva=valorSubtotal-valorDescuento;
     let valorIVA = calcularIVA(valorParaCalcularIva);
-    mostrarTexto("lblValorIVA",valorIVA)
-
-    let valorTotal;
-
-
-
-   
-
-
-  
-
-
+    mostrarTexto("lblValorIVA",valorIVA);
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
     //11. Mostrar el resultado en el componente lblTotal
      /*
@@ -69,13 +58,16 @@ calcularValorTotal = function(){
                 Total esperado: 54.432
             Si el caso de prueba es exitoso, hacer un commit
         */
+    let valorTotal = calcularTotal(valorSubtotal,valorDescuento,valorIVA);
+    mostrarTexto("lblTotal",valorTotal);
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
         /*
             Ejemplo: 
                 Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
             Si funciona, hacer un commit
         */ 
-    
+    let mensaje = (`Valor a pagar por ${cantidad} ${nombreProducto} con ${porcentajeDescuento}% de descuento es de: $${valorTotal}`);
+    mostrarTexto("lblResumen",mensaje);
 }   
 limpiar=function(){
     /*
