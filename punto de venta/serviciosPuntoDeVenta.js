@@ -4,7 +4,7 @@ const calcularValorDescuento = function (monto, porcentajeDescuento) {
 }
 
 const calcularIVA = function (monto) {
-  iva = monto * 1.12;
+  iva = (monto) * 0.12;
   return iva;
 }
 
