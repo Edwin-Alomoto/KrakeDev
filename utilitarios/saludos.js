@@ -7,6 +7,7 @@ saludar= function(){
     let mensajeBienvenido = ("Bienvenido "+nombre+" "+apellido);
     mostrarTexto("lblResultado",mensajeBienvenido);
     mostrarImagen("ImgSaludos","./imagenes/saludos.gif");
+    mostrarTextoEnCaja("txtNombre", " ");
 }
 
 mostrarImagen = function(idComponente, rutaImagen){
@@ -14,7 +15,10 @@ mostrarImagen = function(idComponente, rutaImagen){
     componente.src = rutaImagen;
 }
 
-    
+mostrarTextoEnCaja = function(idComponente, mensaje){
+    let componente = document.getElementById(idComponente);
+    componente.value=mensaje;
+}
 mostrarTexto = function(idComponente, mensaje){
     let componente = document.getElementById(idComponente);
     componente.innerText=mensaje;
