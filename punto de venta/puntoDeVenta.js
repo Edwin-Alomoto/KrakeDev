@@ -10,7 +10,7 @@ calcularValorTotal = function(){
     let valorDescuento = calcularValorDescuento(valorSubtotal,porcentajeDescuento);
     mostrarTexto("lblDescuento",valorDescuento);
 
-    valorParaCalcularIva=valorSubtotal-valorDescuento;
+    let valorParaCalcularIva=valorSubtotal-valorDescuento;
     let valorIVA = calcularIVA(valorParaCalcularIva);
     mostrarTexto("lblValorIVA",valorIVA);
 
