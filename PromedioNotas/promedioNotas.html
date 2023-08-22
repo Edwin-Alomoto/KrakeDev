@@ -6,20 +6,22 @@
     <script src="promedioNotas.js"></script>
     <script src="servicioPromedioNotas.js"></script>
     <script src="utilitarios.js"></script>
+    <link href="PromedioNotas.css" rel="stylesheet" >
 </head>
 
 <body>
-    <h2>Ingrese las notas</h2>
+    <h2 class="titulo">INGRESE LAS NOTAS</h2>
     <input type="text" id="txtNota1" /><br>
     <input type="text" id="txtNota2" /><br>
     <input type="text" id="txtNota3" /><br>
     <p>
-    <h3 id="lblPromedio"></h3>
+    <h3 class="promedio" id="lblPromedio"></h3>
     </p>
     <p>
         <input type="button" value="Promedio de notas" onclick="calcularPromedioNotas()">
     </p>
-    <img id="mostrarGif" width="190px"/>
+    <img id="mostrarGif" width="190px"/><br>
+    <h3 class="titulo" id="txtMensaje"></h3>
 
 </body>
 
