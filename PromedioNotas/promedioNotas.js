@@ -16,7 +16,6 @@ const calcularPromedioNotas = function(){
         mostrarTexto("txtMensaje","EXCELENTE");
         mostrarImagen("mostrarGif","Celebracion.gif");
     }else{
-
         mostrarTexto("txtMensaje","DATOS INCORRECTOS");
         mostrarImagen("mostrarGif","Fracaso.gif");
     }

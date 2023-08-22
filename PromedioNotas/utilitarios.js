@@ -1,31 +1,31 @@
-mostrarImagen = function(idComponente, rutaImagen){
-    let componente = document.getElementById(idComponente);
-    componente.src = rutaImagen;
+mostrarImagen = function (idComponente, rutaImagen) {
+  let componente = document.getElementById(idComponente);
+  componente.src = rutaImagen;
 }
 
-mostrarTextoEnCaja = function(idComponente, mensaje){
-    let componente = document.getElementById(idComponente);
-    componente.value=mensaje;
+mostrarTextoEnCaja = function (idComponente, mensaje) {
+  let componente = document.getElementById(idComponente);
+  componente.value = mensaje;
 }
-mostrarTexto = function(idComponente, mensaje){
-    let componente = document.getElementById(idComponente);
-    componente.innerText=mensaje;
-}
-
-recuperarTexto = function(idComponente){
-    let componente = document.getElementById(idComponente);
-    let valorIngresado = componente.value;
-    return valorIngresado;
+mostrarTexto = function (idComponente, mensaje) {
+  let componente = document.getElementById(idComponente);
+  componente.innerText = mensaje;
 }
 
-recuperarInt= function(idComponente){
-    let valorCaja = recuperarTexto(idComponente);
-    valorEntero = parseInt(valorCaja);
-    return valorEntero;
+recuperarTexto = function (idComponente) {
+  let componente = document.getElementById(idComponente);
+  let valorIngresado = componente.value;
+  return valorIngresado;
 }
 
-recuperarFloat= function(idComponente){
-    let valorCaja = recuperarTexto(idComponente);
-    valorDecimal = parseFloat(valorCaja);
-    return valorDecimal;
+recuperarInt = function (idComponente) {
+  let valorCaja = recuperarTexto(idComponente);
+  valorEntero = parseInt(valorCaja);
+  return valorEntero;
+}
+
+recuperarFloat = function (idComponente) {
+  let valorCaja = recuperarTexto(idComponente);
+  valorDecimal = parseFloat(valorCaja);
+  return valorDecimal;
 }
