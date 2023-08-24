@@ -1,3 +1,10 @@
+/*
+tranformar los datos a Enteros Flotantes  String
+ejemplo
+edad=parseInt(edad);
+*/
+
+
 const calcularTasaInteres = function (ingresoAnual) {
   let ingresoAnualFloat = parseFloat(ingresoAnual);
   let ValorTasa;
