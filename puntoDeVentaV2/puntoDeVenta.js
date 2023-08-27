@@ -21,7 +21,7 @@ calcularValorTotal = function () {
     let valorTotal = calcularTotal(valorSubtotal, valorDescuento, valorIVA);
     mostrarTexto("lblTotal", `$ ${valorTotal}`);
   }
-};
+}
 
 const esProductoValido = function (cajaTexo, idComponente) {
   let hayErrores = false;
@@ -37,7 +37,7 @@ const esProductoValido = function (cajaTexo, idComponente) {
     mostrarTexto(idComponente, " ");
   }
   return !hayErrores;
-};
+}
 
 const esCantidadValida = function (cajaTexo, idComponente) {
   let hayErrores = false;
@@ -53,7 +53,7 @@ const esCantidadValida = function (cajaTexo, idComponente) {
     mostrarTexto(idComponente, " ");
   }
   return !hayErrores;
-};
+}
 
 const esCantidadPrecio = function (cajaTexo, idComponente) {
   let hayErrores = false;
@@ -69,7 +69,7 @@ const esCantidadPrecio = function (cajaTexo, idComponente) {
     mostrarTexto(idComponente, " ");
   }
   return !hayErrores;
-};
+}
 
 limpiar = function () {
   valorCero = 0;
@@ -80,7 +80,7 @@ limpiar = function () {
   mostrarTexto("lblDescuento", "0.0");
   mostrarTexto("lblValorIVA", "0.0");
   mostrarTexto("lblTotal", "0.0");
-  mostrarTexto("lblError1"," ")
-  mostrarTexto("lblError2"," ")
-  mostrarTexto("lblError3"," ")
-};
+  mostrarTexto("lblError1", " ");
+  mostrarTexto("lblError2", " ");
+  mostrarTexto("lblError3", " ");
+}
