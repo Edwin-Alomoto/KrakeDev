@@ -31,5 +31,4 @@ const limpiar = function () {
     mostrarTexto("lblErrores6", " ");
     mostrarTexto("lblErrores7", " ");
     mostrarTexto("lblErrores8", " ");
-
 }

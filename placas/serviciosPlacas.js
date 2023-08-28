@@ -191,6 +191,7 @@ const obtenerTipo = function (placa) {
     return valida;
 }
 
+
 const obtenerDiaPicoYPlaca = function (placa) {
     ultimaPosicion = placa.length - 1;
     ultimaCaracter = placa.charAt(ultimaPosicion);
