@@ -135,3 +135,24 @@ const obtenerProvincia = function(placa){
     }
     return valida;
 }
+
+const obtenerTipo =function(placa) {
+    let valida = !null;
+    if (placa.charAt(1)=="A" || placa.charAt(1)=="Z"){
+        mostrarTexto("lblErrores2", "Es un vehiculo comercial, placa de color naranja");
+    }else if(placa.charAt(1)=="E"){
+        mostrarTexto("lblErrores2", "Es un vehiculo gubernamental, placa de color oro");
+    }else if(placa.charAt(1)=="X"){
+        mostrarTexto("lblErrores2", "Es un vehiculo de uso oficial, placa de color oro");
+    }else if(placa.charAt(1)=="S"){
+        mostrarTexto("lblErrores2", "Es un vehiculo del gobierno provincial, placa de color verde");
+    }else if(placa.charAt(1)=="M"){
+        mostrarTexto("lblErrores2", "Es un vehiculo municipal, placa de color verde");
+    }else{
+        valida = null;
+    }
+    return valida;
+    
+
+
+}

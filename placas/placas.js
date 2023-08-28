@@ -7,6 +7,10 @@ const validarPlaca = function(){
             mostrarTexto("lblErrores1", "NO PERTENECE A NINGUNA PROVINCIA");
         }
 
+        if (obtenerTipo(placa)==null){
+            mostrarTexto("lblErrores2", "Es un vehiculo particular, placa de color blanco");
+        }
+
     }else{
         mostrarTexto("lblPlacaValida","ESTRUCTURA INCORRECTO");
     }
