@@ -35,3 +35,8 @@ const mostrarTexto = function(idComponente,mensaje){
   let componente = document.getElementById(idComponente)
   componente.innerText = mensaje;
 }
+
+const mostrarTextoEnCaja = function(idComponente,mensaje){
+  let componente=document.getElementById(idComponente);
+  componente.value = mensaje;
+}
