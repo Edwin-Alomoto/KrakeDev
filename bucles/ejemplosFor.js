@@ -28,14 +28,14 @@ const mostrarNumeros4 = function () {
         console.log(a);
     }
     console.log("despues del for");
-};
+}
 
 const hackearNasaPelis = function () {
     for (let a = 0; a <= 100; a += 10) {
         console.log(`hackeando la nasa :${a}%`);
     }
     console.log("La nasa a sido hackeada");
-};
+}
 
 const mostrarImpares = function () {
     console.log("Antes for");
@@ -43,4 +43,4 @@ const mostrarImpares = function () {
         console.log(a);
     }
     console.log("Despues for");
-};
+}
