@@ -32,8 +32,7 @@
     justify-content: center;
     margin-right: 250px;
     margin-left: 250px;
-    
-
+    margin-bottom: 20px;
 }
 
 .cuadro{
@@ -52,5 +51,53 @@
 .imagen{
     display: flex;
     justify-content: center;
+}
 
+.contenedorResultado{
+    border-radius: 10px;
+    background-color:rgb(219, 248, 248);
+    margin-right: 250px;
+    margin-left: 250px;
+    margin-bottom: 20px; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cuadroContador{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color:rgb(219, 248, 248);
+    margin-right: 500px;
+    margin-left: 500px;
+}
+
+.cuadroTitulo{
+    display: flex;
+    flex-direction: row;
+}
+
+.tituloCampo{
+    background-color: rgb(147, 178, 236);
+    display: flex;
+    flex: 1;
+    font-size: 18px;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    justify-content: center;
+}
+
+.cuadroResultado{
+    display: flex;
+    flex-direction: row;
+}
+
+.cuadroCampo{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+.valores{
+    display: flex;
+    font-size: 18px;
 }
