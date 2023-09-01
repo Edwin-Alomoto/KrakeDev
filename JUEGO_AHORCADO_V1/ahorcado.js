@@ -1,6 +1,7 @@
 let palabraSecreta;
 let intentos = 0;
 let coincidencia = 0;
+let intentosError = 0;
 const esMayuscula = function (caracter) {
     if (caracter.charCodeAt(0) >= 65 && caracter.charCodeAt(0) <= 90) {
         return true;
@@ -26,7 +27,7 @@ const guardarPalabra = function () {
             palabraSecreta = palabra;
             console.log(palabraSecreta);
         }
-    }else{
+    } else {
         alert("DEBE TENER 5 LETRAS");
     }
 };
@@ -56,34 +57,36 @@ const validar = function (letra) {
 
         if (caracter == letra && letraEcontrada == 1) {
             mostrarLetra(caracter, letraEcontrada);
-            coincidencia=coincidencia+1;
-            valido=true
+            coincidencia = coincidencia + 1;
+            valido = true;
         } else if (caracter == letra && letraEcontrada == 2) {
             mostrarLetra(caracter, letraEcontrada);
-            coincidencia=coincidencia+1;
-            valido=true
+            coincidencia = coincidencia + 1;
+            valido = true;
         } else if (caracter == letra && letraEcontrada == 3) {
             mostrarLetra(caracter, letraEcontrada);
-            coincidencia=coincidencia+1;
-            valido=true
+            coincidencia = coincidencia + 1;
+            valido = true;
         } else if (caracter == letra && letraEcontrada == 4) {
             mostrarLetra(caracter, letraEcontrada);
-            coincidencia=coincidencia+1;
-            valido=true
+            coincidencia = coincidencia + 1;
+            valido = true;
         } else if (caracter == letra && letraEcontrada == 5) {
             mostrarLetra(caracter, letraEcontrada);
-            coincidencia=coincidencia+1;
-            valido=true
+            coincidencia = coincidencia + 1;
+            valido = true;
         }
     }
-    
 
-    if(coincidencia==5){
+    if (coincidencia == 5) {
         alert("HA GANADO");
-    }else if(!valido){
-        alert("LA LETRA NO ES PARTE DE LA PALABRA")
+        mostrarImagen("ahorcadoImagen","ganador.gif");
+    } else if (!valido) {
+        alert("LA LETRA NO ES PARTE DE LA PALABRA");
+        intentosError = intentosError + 1;
+        mostrarAhorcado();
     }
-}
+};
 
 const ingresarLetra = function () {
     let letra = recuperarTexto("txtLetra");
@@ -91,11 +94,35 @@ const ingresarLetra = function () {
         if (intentos <= 9) {
             intentos = intentos + 1;
             validar(letra);
-            
-        }else{
+        } else {
             alert("HA PERDIDO");
+            mostrarImagen("ahorcadoImagen", "gameOver.gif");
         }
     } else {
         alert("SOLO SE ACEPTAN MAYUSCULA");
+    }
+};
+
+const mostrarAhorcado = function () {
+    if (intentos == 1) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_01.png");
+    } else if (intentos == 2) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_02.png");
+    } else if (intentos == 3) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_03.png");
+    } else if (intentos == 4) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_04.png");
+    } else if (intentos == 5) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_05.png");
+    } else if (intentos == 6) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_06.png");
+    } else if (intentos == 7) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_07.png");
+    } else if (intentos == 8) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_08.png");
+    } else if (intentos == 9) {
+        mostrarImagen("ahorcadoImagen", "Ahorcado_09.png");
+    } else if (intentos == 10) {
+        mostrarImagen("ahorcadoImagen", "gameOver.gif");
     }
 };
