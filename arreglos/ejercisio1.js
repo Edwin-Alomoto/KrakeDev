@@ -36,8 +36,6 @@ const calcularPromedio = function () {
     for (let indice = 0; indice < nota.length; indice++) {
         sumaNotas = sumaNotas + nota[indice];
     }
-
     promedio = sumaNotas / nota.length;
-
     return promedio.toFixed(2);
 }
