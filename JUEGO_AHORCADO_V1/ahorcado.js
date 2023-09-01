@@ -8,7 +8,7 @@ const esMayuscula = function (caracter) {
     } else {
         return false;
     }
-};
+}
 
 const guardarPalabra = function () {
     let letra;
@@ -30,7 +30,7 @@ const guardarPalabra = function () {
     } else {
         alert("DEBE TENER 5 LETRAS");
     }
-};
+}
 
 const mostrarLetra = function (letra, posicion) {
     if (posicion == 1) {
@@ -44,7 +44,7 @@ const mostrarLetra = function (letra, posicion) {
     } else if (posicion == 5) {
         mostrarTexto("div4", letra);
     }
-};
+}
 
 const validar = function (letra) {
     let caracter;
@@ -80,13 +80,13 @@ const validar = function (letra) {
 
     if (coincidencia == 5) {
         alert("HA GANADO");
-        mostrarImagen("ahorcadoImagen","ganador.gif");
+        mostrarImagen("ahorcadoImagen", "ganador.gif");
     } else if (!valido) {
         alert("LA LETRA NO ES PARTE DE LA PALABRA");
         intentosError = intentosError + 1;
         mostrarAhorcado();
     }
-};
+}
 
 const ingresarLetra = function () {
     let letra = recuperarTexto("txtLetra");
@@ -101,7 +101,7 @@ const ingresarLetra = function () {
     } else {
         alert("SOLO SE ACEPTAN MAYUSCULA");
     }
-};
+}
 
 const mostrarAhorcado = function () {
     if (intentos == 1) {
@@ -125,4 +125,4 @@ const mostrarAhorcado = function () {
     } else if (intentos == 10) {
         mostrarImagen("ahorcadoImagen", "gameOver.gif");
     }
-};
+}
