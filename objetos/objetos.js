@@ -4,7 +4,7 @@ const probarAtributos = function () {
         apellido: "morales",
         edad: 24,
         vivo: true,
-    };
+    }
 
     console.log(personas.nombre);
     console.log(personas.edad);
@@ -20,13 +20,13 @@ const crearProductos = function () {
         nombre: "L/C Norma", //lapices de colores
         precio: 4.0,
         stock: 123,
-    };
+    }
 
     let producto2 = {
         nombre: "L/C Estilo doble punta",
         precio: 1.75,
         stock: 250,
-    };
+    }
 
     console.log(producto1.nombre);
     console.log(producto2.precio);
@@ -38,4 +38,4 @@ const crearProductos = function () {
     } else if (producto1.stock == producto2.stock) {
         console.log(`Ambos productos tiene el mismo stock`);
     }
-};
+}
