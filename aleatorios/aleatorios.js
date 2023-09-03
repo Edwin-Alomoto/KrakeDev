@@ -15,7 +15,7 @@ const generarAleatorio = function () {
         }
         mostrarResultado(aleatorio);
     } else {
-        console.log("Que sea un numero entre 5 y 20");
+        alert("Que sea un numero entre 5 y 20");
     }
 }
 
