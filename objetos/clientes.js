@@ -4,7 +4,7 @@ let clientes = [
     { cedula: "13467978", nombre: "Pepe", edad: 24 },
 ];
 
-guardarCambios= function(){
+guardarCambios = function () {
     let valorCedula = recuperarTexto("txtCedula");
     let valorNombre = recuperarTexto("txtNombre");
     let valorEdad = recuperarEntero("txtEdad");
@@ -18,24 +18,24 @@ guardarCambios= function(){
 
 }
 
-modificarCliente=function(cliente){
+modificarCliente = function (cliente) {
     let clienteEncontrado = buscarClientes(cliente.cedula);
-    if(clienteEncontrado!=null){
-        clienteEncontrado.nombre=cliente.nombre;
-        clienteEncontrado.edad=cliente.edad;
+    if (clienteEncontrado != null) {
+        clienteEncontrado.nombre = cliente.nombre;
+        clienteEncontrado.edad = cliente.edad;
     }
 
 }
 
-ejecutarBusqueda= function(){
-    let valorCedula =recuperarTexto("txtCedulaBusqueda");
+ejecutarBusqueda = function () {
+    let valorCedula = recuperarTexto("txtCedulaBusqueda");
     let respuesta = buscarClientes(valorCedula);
-    if(respuesta==null){
+    if (respuesta == null) {
         alert("cliente no encontrado")
-    }else{
-        mostrarTextoEnCaja("txtCedula",respuesta.cedula)
-        mostrarTextoEnCaja("txtNombre",respuesta.nombre)
-        mostrarTextoEnCaja("txtEdad",respuesta.edad)
+    } else {
+        mostrarTextoEnCaja("txtCedula", respuesta.cedula);
+        mostrarTextoEnCaja("txtNombre", respuesta.nombre);
+        mostrarTextoEnCaja("txtEdad", respuesta.edad);
     }
 
 }
