@@ -4,9 +4,16 @@ let empleados = [
     {cedula:"2445600234",nombre:"Jonathan",apellido:"Rivadeneira",sueldo:1200.0}
 ]
 
+let esNuevo=false; // variable global 
+
 //botones principales
 const mostrarOpcionEmpleado = function () {
     mostrarEmpleados();
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
     mostrarComponente("divEmpleado");
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
@@ -23,6 +30,34 @@ const mostrarOpcionResumen = function () {
     ocultarComponente("divEmpleado");
     ocultarComponente("divRol");
 }
+
+// Boton nuevo
+const ejecutarNuevo = function(){
+    habilitarComponente("txtCedula");
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
+    esNuevo=true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Mostrar empleados tablas
 
@@ -52,4 +87,6 @@ const mostrarEmpleados = function () {
     contenidoTabla += "</table>";
     cmpTabla.innerHTML = contenidoTabla;
 }
+
+
 
