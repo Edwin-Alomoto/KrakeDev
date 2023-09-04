@@ -39,3 +39,69 @@ const crearProductos = function () {
         console.log(`Ambos productos tiene el mismo stock`);
     }
 }
+
+const modificarAtributos = function () {
+    let cuenta = {
+        numero: "3453453455",
+        saldo: 0.0,
+    };
+    cuenta.saldo = 100;
+    cuenta.saldo += 10;
+    console.log(cuenta.saldo);
+}
+
+const crearClientes = function () {
+    let clientes = {
+        cedula: "2345678673",
+        nombre: "juan",
+    }
+
+    let clientes1 = {};
+
+    clientes1.nombre = "romeo";
+    clientes1.edad = 24;
+    clientes1.cedula = "435346567";
+}
+
+const probarIncrementarSaldo = function () {
+    let cuenta = {
+        numero: "23456",
+        saldo: 34.0,
+    }
+
+    incrementarSaldo(cuenta, 100);
+    console.log(cuenta.saldo);
+}
+
+const probarDeterrminarMayor = function () {
+    let persona1 = {
+        nombre: "daniel",
+        edad: 45,
+    }
+
+    let persona2 = {
+        nombre: "juan",
+        edad: 34,
+    }
+
+    let mayor = determinarMayor(persona1, persona2);
+
+    if (mayor != null) {
+        console.log(`el mayor es ${mayor.nombre} y tiene ${mayor.edad}`);
+    }
+}
+
+const incrementarSaldo = function (cuenta, monto) {
+    cuenta.saldo += monto; // Es lo mismo del de abajo pero mas simplificado
+    //cuenta.saldo=cuenta.saldo+monto;
+}
+
+const determinarMayor = function (persona1, persona2) {
+    if (persona1.edad > persona2.edad) {
+        return persona1;
+    } else if (persona2.edad > persona1.edad) {
+        return persona2;
+    } else {
+        return null;
+    }
+};
