@@ -78,25 +78,51 @@ body{
     align-items: center;
     justify-content: center;
 }
-tbody tr:nth-child(odd) {
-    background-color: #908efc;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #6a51cf;
-  }
-  
-  tbody tr {
-    background-image: url(noise.png);
-  }
-  
+
   table {
-    background-color: #0b0c0c;
     width: 100%;
+    border-spacing: 0;
+    
   }
-  td{
+  th{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
+    width: 20px;
   }
+
+  td{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    border: 0.5px solid #B0BEC5;
+  }
+
+  tr:nth-child(even){
+    background-color: #ECEFF1;
+  }
+  
+  th:nth-child(1){
+    background-color: #808B96;
+    color: #ffffffd5;
+  }
+
+  th:nth-child(2){
+    background-color: #4FC3F7;
+    color: #13394bc9;
+  }
+
+  th:nth-child(3){
+    background-color: #FFCA28;
+    color: #5a470ed7 ;
+  }
+  th:nth-child(4){
+    background-color: #E57373;
+    color: #411f1fd2;
+  }
+
   .areaTabla{
     margin-top: 20px;
   }
