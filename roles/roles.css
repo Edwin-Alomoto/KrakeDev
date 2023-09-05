@@ -123,6 +123,10 @@ body{
     background-color: #E57373;
     color: #411f1fd2;
   }
+  th:nth-child(5){
+    background-color: #A569BD;
+    color: #472d52d0;
+  }
 
   .areaTabla{
     margin-top: 20px;
