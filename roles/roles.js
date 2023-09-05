@@ -87,6 +87,7 @@ const guardar = function () {
             //nuevoCliente.cedula = cedulaCaja
             nuevaCedula = true;
         }
+
     } else {
         mostrarTexto("lblErrorCedula", " Tiene que tener 10 digitos");
     }
@@ -110,6 +111,7 @@ const guardar = function () {
             //nuevoCliente.nombre = nombreCaja;
             nuevoNombre = true;
         }
+
     } else {
         mostrarTexto("lblErrorNombre", " Tiene que tener al menos 3 caracteres");
     }
@@ -133,6 +135,7 @@ const guardar = function () {
             //nuevoCliente.apellido = apellidoCaja
             nuevoApellido = true;
         }
+
     } else {
         mostrarTexto("lblErrorApellido", " Tiene que tener al menos 3 caracteres");
     }
@@ -163,7 +166,6 @@ const guardar = function () {
             }
         }
         deshabilitarComponentesDeIngreso();
-
     }
 }
 
@@ -191,7 +193,6 @@ const mostrarEmpleados = function () {
             "</td>" +
             "</tr>";
     }
-
     contenidoTabla += "</table>";
     cmpTabla.innerHTML = contenidoTabla;
 }
