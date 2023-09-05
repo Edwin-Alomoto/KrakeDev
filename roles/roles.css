@@ -82,6 +82,7 @@ body{
   table {
     width: 100%;
     border-spacing: 0;
+    font-size: 12px;
     
   }
   th{
@@ -210,5 +211,5 @@ body{
 .error{
     color:red;
     font-style: italic;
-    font-size: 14px;
+    font-size: 11px;
 }
