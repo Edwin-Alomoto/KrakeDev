@@ -67,3 +67,23 @@ esMayuscula = function(idComponente){
     }
 }
 
+recuperarValorDiv = function(idComponente){
+    let componente;
+    let valorIngresado;
+    componente=document.getElementById(idComponente);
+    valorIngresado=componente.textContent;
+    return valorIngresado;
+}
+
+recuperarFloatDiv = function(idComponente){
+    let valorCaja= recuperarTexto(idComponente);
+    let valorFlotante = parseFloat(valorCaja);
+    return valorFlotante;
+}
+
+recuperarIntDiv = function(idComponente){
+    let valorCaja= recuperarTexto(idComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
+
+}

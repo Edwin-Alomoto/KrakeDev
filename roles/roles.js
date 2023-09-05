@@ -1,8 +1,18 @@
 let empleados = [
     { cedula: "1714616123", nombre: "JONH", apellido: "CENA", sueldo: 500.0 },
-    { cedula: "0914632123", nombre: "LUISA", apellido: "GONZALEZ", sueldo: 900.0, },
-    { cedula: "2445600234", nombre: "JONATHAN", apellido: "RIVADENEIRA", sueldo: 1200.0, },
-]
+    {
+        cedula: "0914632123",
+        nombre: "LUISA",
+        apellido: "GONZALEZ",
+        sueldo: 900.0,
+    },
+    {
+        cedula: "2445600234",
+        nombre: "JONATHAN",
+        apellido: "RIVADENEIRA",
+        sueldo: 1200.0,
+    },
+];
 
 let esNuevo = false; // variable global
 
@@ -13,19 +23,19 @@ const mostrarOpcionEmpleado = function () {
     mostrarComponente("divEmpleado");
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
-}
+};
 
 const mostrarOpcionRol = function () {
     mostrarComponente("divRol");
     ocultarComponente("divEmpleado");
     ocultarComponente("divResumen");
-}
+};
 
 const mostrarOpcionResumen = function () {
     mostrarComponente("divResumen");
     ocultarComponente("divEmpleado");
     ocultarComponente("divRol");
-}
+};
 
 // Boton nuevo
 const ejecutarNuevo = function () {
@@ -35,7 +45,7 @@ const ejecutarNuevo = function () {
     habilitarComponente("txtSueldo");
     habilitarComponente("btnGuardar");
     esNuevo = true;
-}
+};
 
 // Boton agregar - guardar
 const buscarEmpleado = function (cedulaIngresada) {
@@ -49,7 +59,7 @@ const buscarEmpleado = function (cedulaIngresada) {
         }
     }
     return empleadoEncontrado;
-}
+};
 
 const agregarEmpleado = function (empleado) {
     let resultado = buscarEmpleado(empleado.cedula);
@@ -59,14 +69,14 @@ const agregarEmpleado = function (empleado) {
     } else {
         return false;
     }
-}
+};
 
 // Modificar
 const ejecutarBusqueda = function () {
     let cedulaBusqueda = recuperarTexto("txtBusquedaCedula");
     let resultadoBusqueda = buscarEmpleado(cedulaBusqueda);
-    if ((resultadoBusqueda == null)) {
-        alert("EMPLEADO NO EXISTE")
+    if (resultadoBusqueda == null) {
+        alert("EMPLEADO NO EXISTE");
     } else {
         mostrarTextoEnCaja("txtCedula", resultadoBusqueda.cedula);
         mostrarTextoEnCaja("txtNombre", resultadoBusqueda.nombre);
@@ -74,7 +84,7 @@ const ejecutarBusqueda = function () {
         mostrarTextoEnCaja("txtSueldo", resultadoBusqueda.sueldo);
         deshabilitarComponenteBusqueda();
     }
-}
+};
 
 // Boton guardar - modificar
 const guardar = function () {
@@ -101,7 +111,6 @@ const guardar = function () {
         } else {
             nuevaCedula = true;
         }
-
     } else {
         mostrarTexto("lblErrorCedula", " Tiene que tener 10 digitos");
     }
@@ -124,7 +133,6 @@ const guardar = function () {
         } else {
             nuevoNombre = true;
         }
-
     } else {
         mostrarTexto("lblErrorNombre", " Tiene que tener al menos 3 caracteres");
     }
@@ -147,7 +155,6 @@ const guardar = function () {
         } else {
             nuevoApellido = true;
         }
-
     } else {
         mostrarTexto("lblErrorApellido", " Tiene que tener al menos 3 caracteres");
     }
@@ -178,13 +185,13 @@ const guardar = function () {
             }
         }
 
-        if (esNuevo==false){
+        if (esNuevo == false) {
             for (let i = 0; i < empleados.length; i++) {
                 empleadosBuscar = empleados[i];
                 if (empleadosBuscar.cedula == cedulaCaja) {
-                    empleados[i].nombre=nombreCaja;
-                    empleados[i].apellido=apellidoCaja;
-                    empleados[i].sueldo=sueldoCaja;
+                    empleados[i].nombre = nombreCaja;
+                    empleados[i].apellido = apellidoCaja;
+                    empleados[i].sueldo = sueldoCaja;
                     break;
                 }
             }
@@ -194,8 +201,8 @@ const guardar = function () {
         }
         deshabilitarComponentesDeIngreso();
     }
-    esNuevo=false;
-}
+    esNuevo = false;
+};
 
 // Mostrar empleados tabla
 const mostrarEmpleados = function () {
@@ -214,35 +221,64 @@ const mostrarEmpleados = function () {
         elementoEmpleados = empleados[i];
         contenidoTabla +=
             "<tr>" +
-            "<td>" + elementoEmpleados.cedula + "</td>" +
-            "<td>" + elementoEmpleados.nombre + "</td>" +
-            "<td>" + elementoEmpleados.apellido + "</td>" +
-            "<td>" + elementoEmpleados.sueldo +
+            "<td>" +
+            elementoEmpleados.cedula +
+            "</td>" +
+            "<td>" +
+            elementoEmpleados.nombre +
+            "</td>" +
+            "<td>" +
+            elementoEmpleados.apellido +
+            "</td>" +
+            "<td>" +
+            elementoEmpleados.sueldo +
             "</td>" +
             "</tr>";
     }
     contenidoTabla += "</table>";
     cmpTabla.innerHTML = contenidoTabla;
-}
+};
 
-//Calcular rol de pagos 
-const buscarPorRol = function(){
+//Calcular rol de pagos
+const buscarPorRol = function () {
     let recuperarCedula = recuperarTexto("txtBusquedaCedula2");
     let personaEncontrada = buscarEmpleado(recuperarCedula);
-    if(personaEncontrada==null){
+    if (personaEncontrada == null) {
         alert("EMPLEADO NO EXISTE");
-    }else{
-        mostrarTexto("infoCedula",personaEncontrada.cedula);
-        mostrarTexto("infoNombre",personaEncontrada.nombre);
-        mostrarTexto("infoSueldo",personaEncontrada.sueldo);
-        
+    } else {
+        mostrarTexto("infoCedula", personaEncontrada.cedula);
+        mostrarTexto("infoNombre", personaEncontrada.nombre);
+        mostrarTexto("infoSueldo", personaEncontrada.sueldo);
     }
+};
 
-}
+const calcularAporteEmpleado = function (sueldo) {
+    let aporte = sueldo * 0.0945;
+    return aporte;
+};
 
+const calcularValorAPagar = function (sueldo, aporte, descuento) {
+    let valorAPagar = sueldo - (aporte + descuento);
+    return valorAPagar;
+};
 
+const calcularRol = function () {
+    let sueldo = recuperarValorDiv("infoSueldo");
+    let sueldoFloat = parseFloat(sueldo);
+    let descuento = recuperarFloatDiv("txtDescuentos");
 
-const limpiarBoton = function(){
+    if (descuento > 0 && descuento <= sueldoFloat) {
+        let resultadoAporte = calcularAporteEmpleado(sueldoFloat);
+        mostrarTexto("infoIESS", resultadoAporte);
+        let pagar = calcularValorAPagar(sueldoFloat, resultadoAporte, descuento);
+        mostrarTexto("infoPago", pagar.toFixed(2));
+    } else {
+        alert("INGRESE UN VALOR FLOTANTE EN EL DESCUENTO");
+    }
+};
+
+// Boton limpiar
+const limpiarBoton = function () {
     mostrarTextoEnCaja("txtCedula", "");
     mostrarTextoEnCaja("txtNombre", "");
     mostrarTextoEnCaja("txtApellido", "");
@@ -251,7 +287,7 @@ const limpiarBoton = function(){
     mostrarTextoEnCaja("txtBusquedaCedula", "");
     habilitarComponente("btnNuevo");
     deshabilitarComponente("btnGuardar");
-}
+};
 
 //  funcion deshabilitar
 const deshabilitarComponentesDeIngreso = function () {
@@ -260,7 +296,7 @@ const deshabilitarComponentesDeIngreso = function () {
     deshabilitarComponente("txtApellido");
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
-}
+};
 
 const deshabilitarComponenteBusqueda = function () {
     deshabilitarComponente("btnNuevo");
@@ -269,4 +305,4 @@ const deshabilitarComponenteBusqueda = function () {
     habilitarComponente("txtApellido");
     habilitarComponente("txtSueldo");
     habilitarComponente("btnGuardar");
-}
+};
