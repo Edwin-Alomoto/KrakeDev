@@ -166,6 +166,12 @@ const guardar = function () {
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA " + cedulaCaja);
             }
         }
+
+        deshabilitarComponente("txtCedula");
+        deshabilitarComponente("txtNombre");
+        deshabilitarComponente("txtApellido");
+        deshabilitarComponente("txtSueldo");
+        deshabilitarComponente("btnGuardar");
     }
 }
 
