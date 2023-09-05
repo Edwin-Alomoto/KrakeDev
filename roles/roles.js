@@ -293,6 +293,7 @@ const agregarRol = function (rol) {
     if (resultado == null) {
         roles.push(rol)
         alert("SE HA GUARDADO CORRECTAMENTE");
+        limpiarRol();
         return true;
     } else {
         arte("YA EXISTE");
@@ -321,11 +322,12 @@ const guardarRol = function () {
     rol.aporteEmpleado = aporteRecuperado
     rol.aporteEmpleador = calculoAporte.toFixed(2);
     agregarRol(rol);
+
 }
 
 //mostrar rol
- 
-const mostrarRoles = function(){
+
+const mostrarRoles = function () {
     let elementoRoles;
 
     let cmpTabla = document.getElementById("tablaResumen");
@@ -364,19 +366,22 @@ const mostrarRoles = function(){
     cmpTabla.innerHTML = contenidoTabla;
 }
 
-const mostrarTotales = function(){
-    let totaEmpleado=0;
-    let totalEmpleador=0;
-    let totalAPagar=0;
+const mostrarTotales = function () {
+    let totaEmpleado = 0;
+    let totalEmpleador = 0;
+    let totalAPagar = 0;
+    let totalNomina;
 
-    for(let i=0;i<roles.length;i++){
-        totaEmpleado+=roles[i].aporteEmpleado;
-        totalEmpleador+=parseFloat(roles[i].aporteEmpleador);
-        totalAPagar+=roles[i].valorAPagar;
+    for (let i = 0; i < roles.length; i++) {
+        totaEmpleado += roles[i].aporteEmpleado;
+        totalEmpleador += parseFloat(roles[i].aporteEmpleador);
+        totalAPagar += roles[i].valorAPagar;
     }
-    mostrarTexto("infoAporteEmpleado",totaEmpleado.toFixed(2))
-    mostrarTexto("infoAporteEmpresa",totalEmpleador)
-    mostrarTexto("infoTotalPago",totalAPagar)
+    totalNomina = totaEmpleado + totalEmpleador + totalAPagar;
+    mostrarTexto("infoAporteEmpleado", totaEmpleado.toFixed(2));
+    mostrarTexto("infoAporteEmpresa", totalEmpleador);
+    mostrarTexto("infoTotalPago", totalAPagar);
+    mostrarTexto("infoNomina", totalNomina.toFixed(2));
 }
 
 
@@ -409,3 +414,14 @@ const deshabilitarComponenteBusqueda = function () {
     habilitarComponente("txtSueldo");
     habilitarComponente("btnGuardar");
 }
+
+const limpiarRol = function () {
+    mostrarTexto("infoCedula", "");
+    mostrarTexto("infoNombre", "");
+    mostrarTexto("infoSueldo", "");
+    mostrarTexto("infoIESS", "");
+    mostrarTexto("infoPago", "");
+    mostrarTexto("txtBusquedaCedula2", "");
+    mostrarTextoEnCaja("txtDescuentos", "");
+}
+
