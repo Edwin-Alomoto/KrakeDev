@@ -84,7 +84,6 @@ const guardar = function () {
         if (resultadoDigito) {
             mostrarTexto("lblErrorCedula", "No debe tener letras");
         } else {
-            //nuevoCliente.cedula = cedulaCaja
             nuevaCedula = true;
         }
 
@@ -108,7 +107,6 @@ const guardar = function () {
         if (resultadoMayuscula) {
             mostrarTexto("lblErrorNombre", "Deben ser mayusculas");
         } else {
-            //nuevoCliente.nombre = nombreCaja;
             nuevoNombre = true;
         }
 
@@ -132,7 +130,6 @@ const guardar = function () {
         if (resultadoMayusculaApellido) {
             mostrarTexto("lblErrorApellido", "Deben ser mayusculas");
         } else {
-            //nuevoCliente.apellido = apellidoCaja
             nuevoApellido = true;
         }
 
@@ -144,7 +141,6 @@ const guardar = function () {
     let nuevoSuelo;
     if (sueldoCaja >= parseFloat(400) && sueldoCaja <= parseFloat(5000)) {
         mostrarTexto("lblErrorSueldo", " ");
-        //nuevoCliente.sueldo = sueldoCaja
         nuevoSuelo = true;
     } else {
         mostrarTexto("lblErrorSueldo", " Tiene que tener entre $400 y $5000");
@@ -160,9 +156,9 @@ const guardar = function () {
             nuevoEmpleado = agregarEmpleado(nuevoCliente);
             if (nuevoEmpleado) {
                 alert("EMPLEADO GUARDADO CORRECTAMENTE");
-                limpiarBotonGuardarNuevo();
                 mostrarEmpleados();
             } else {
+                limpiarBoton();
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA " + cedulaCaja);
             }
         }
@@ -179,12 +175,11 @@ const guardar = function () {
             }
 
             alert("EMPLEADO MODIFICADO EXITOSAMENTE");
-            limpiarBotonGuardarModificar();
             mostrarEmpleados();
         }
-        esNuevo=false;
         deshabilitarComponentesDeIngreso();
     }
+    esNuevo=false;
 }
 
 // Mostrar empleados tabla
@@ -248,19 +243,13 @@ const ejecutarBusqueda = function () {
     }
 }
 
-const limpiarBotonGuardarModificar = function(){
+const limpiarBoton = function(){
     mostrarTextoEnCaja("txtCedula", "");
     mostrarTextoEnCaja("txtNombre", "");
     mostrarTextoEnCaja("txtApellido", "");
     mostrarTextoEnCaja("txtSueldo", "");
+    mostrarTextoEnCaja("txtBusquedaCedula", "");
     mostrarTextoEnCaja("txtBusquedaCedula", "");
     habilitarComponente("btnNuevo");
-}
-
-const limpiarBotonGuardarNuevo = function(){
-    mostrarTextoEnCaja("txtCedula", "");
-    mostrarTextoEnCaja("txtNombre", "");
-    mostrarTextoEnCaja("txtApellido", "");
-    mostrarTextoEnCaja("txtSueldo", "");
-    mostrarTextoEnCaja("txtBusquedaCedula", "");
+    deshabilitarComponente("btnGuardar");
 }
