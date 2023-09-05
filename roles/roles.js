@@ -9,11 +9,7 @@ let esNuevo = false; // variable global
 //botones principales
 const mostrarOpcionEmpleado = function () {
     mostrarEmpleados();
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-    deshabilitarComponente("btnGuardar");
+    deshabilitarComponentesDeIngreso();
     mostrarComponente("divEmpleado");
     ocultarComponente("divRol");
     ocultarComponente("divResumen");
@@ -166,12 +162,8 @@ const guardar = function () {
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA " + cedulaCaja);
             }
         }
+        deshabilitarComponentesDeIngreso();
 
-        deshabilitarComponente("txtCedula");
-        deshabilitarComponente("txtNombre");
-        deshabilitarComponente("txtApellido");
-        deshabilitarComponente("txtSueldo");
-        deshabilitarComponente("btnGuardar");
     }
 }
 
@@ -202,4 +194,12 @@ const mostrarEmpleados = function () {
 
     contenidoTabla += "</table>";
     cmpTabla.innerHTML = contenidoTabla;
+}
+
+const deshabilitarComponentesDeIngreso = function () {
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
