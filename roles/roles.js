@@ -160,11 +160,29 @@ const guardar = function () {
             nuevoEmpleado = agregarEmpleado(nuevoCliente);
             if (nuevoEmpleado) {
                 alert("EMPLEADO GUARDADO CORRECTAMENTE");
+                limpiarBotonGuardarNuevo();
                 mostrarEmpleados();
             } else {
                 alert("YA EXISTE UN EMPLEADO CON LA CEDULA " + cedulaCaja);
             }
         }
+
+        if (esNuevo==false){
+            for (let i = 0; i < empleados.length; i++) {
+                empleadosBuscar = empleados[i];
+                if (empleadosBuscar.cedula == cedulaCaja) {
+                    empleados[i].nombre=nombreCaja;
+                    empleados[i].apellido=apellidoCaja;
+                    empleados[i].sueldo=sueldoCaja;
+                    break;
+                }
+            }
+
+            alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+            limpiarBotonGuardarModificar();
+            mostrarEmpleados();
+        }
+        esNuevo=false;
         deshabilitarComponentesDeIngreso();
     }
 }
@@ -197,10 +215,52 @@ const mostrarEmpleados = function () {
     cmpTabla.innerHTML = contenidoTabla;
 }
 
+//  funcion deshabilitar
 const deshabilitarComponentesDeIngreso = function () {
     deshabilitarComponente("txtCedula");
     deshabilitarComponente("txtNombre");
     deshabilitarComponente("txtApellido");
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
+}
+
+const deshabilitarComponenteBusqueda = function () {
+    deshabilitarComponente("btnNuevo");
+    deshabilitarComponente("txtCedula");
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
+}
+
+// Modificar
+const ejecutarBusqueda = function () {
+    let cedulaBusqueda = recuperarTexto("txtBusquedaCedula");
+    let resultadoBusqueda = buscarEmpleado(cedulaBusqueda);
+    if ((resultadoBusqueda == null)) {
+        alert("EMPLEADO NO EXISTE")
+    } else {
+        mostrarTextoEnCaja("txtCedula", resultadoBusqueda.cedula);
+        mostrarTextoEnCaja("txtNombre", resultadoBusqueda.nombre);
+        mostrarTextoEnCaja("txtApellido", resultadoBusqueda.apellido);
+        mostrarTextoEnCaja("txtSueldo", resultadoBusqueda.sueldo);
+        deshabilitarComponenteBusqueda();
+    }
+}
+
+const limpiarBotonGuardarModificar = function(){
+    mostrarTextoEnCaja("txtCedula", "");
+    mostrarTextoEnCaja("txtNombre", "");
+    mostrarTextoEnCaja("txtApellido", "");
+    mostrarTextoEnCaja("txtSueldo", "");
+    mostrarTextoEnCaja("txtBusquedaCedula", "");
+    habilitarComponente("btnNuevo");
+}
+
+const limpiarBotonGuardarNuevo = function(){
+    mostrarTextoEnCaja("txtCedula", "");
+    mostrarTextoEnCaja("txtNombre", "");
+    mostrarTextoEnCaja("txtApellido", "");
+    mostrarTextoEnCaja("txtSueldo", "");
+    mostrarTextoEnCaja("txtBusquedaCedula", "");
 }
