@@ -61,6 +61,21 @@ const agregarEmpleado = function (empleado) {
     }
 }
 
+// Modificar
+const ejecutarBusqueda = function () {
+    let cedulaBusqueda = recuperarTexto("txtBusquedaCedula");
+    let resultadoBusqueda = buscarEmpleado(cedulaBusqueda);
+    if ((resultadoBusqueda == null)) {
+        alert("EMPLEADO NO EXISTE")
+    } else {
+        mostrarTextoEnCaja("txtCedula", resultadoBusqueda.cedula);
+        mostrarTextoEnCaja("txtNombre", resultadoBusqueda.nombre);
+        mostrarTextoEnCaja("txtApellido", resultadoBusqueda.apellido);
+        mostrarTextoEnCaja("txtSueldo", resultadoBusqueda.sueldo);
+        deshabilitarComponenteBusqueda();
+    }
+}
+
 // Boton guardar - modificar
 const guardar = function () {
     let cedulaCaja = recuperarTexto("txtCedula");
@@ -210,6 +225,34 @@ const mostrarEmpleados = function () {
     cmpTabla.innerHTML = contenidoTabla;
 }
 
+//Calcular rol de pagos 
+const buscarPorRol = function(){
+    let recuperarCedula = recuperarTexto("txtBusquedaCedula2");
+    let personaEncontrada = buscarEmpleado(recuperarCedula);
+    if(personaEncontrada==null){
+        alert("EMPLEADO NO EXISTE");
+    }else{
+        mostrarTexto("infoCedula",personaEncontrada.cedula);
+        mostrarTexto("infoNombre",personaEncontrada.nombre);
+        mostrarTexto("infoSueldo",personaEncontrada.sueldo);
+        
+    }
+
+}
+
+
+
+const limpiarBoton = function(){
+    mostrarTextoEnCaja("txtCedula", "");
+    mostrarTextoEnCaja("txtNombre", "");
+    mostrarTextoEnCaja("txtApellido", "");
+    mostrarTextoEnCaja("txtSueldo", "");
+    mostrarTextoEnCaja("txtBusquedaCedula", "");
+    mostrarTextoEnCaja("txtBusquedaCedula", "");
+    habilitarComponente("btnNuevo");
+    deshabilitarComponente("btnGuardar");
+}
+
 //  funcion deshabilitar
 const deshabilitarComponentesDeIngreso = function () {
     deshabilitarComponente("txtCedula");
@@ -226,30 +269,4 @@ const deshabilitarComponenteBusqueda = function () {
     habilitarComponente("txtApellido");
     habilitarComponente("txtSueldo");
     habilitarComponente("btnGuardar");
-}
-
-// Modificar
-const ejecutarBusqueda = function () {
-    let cedulaBusqueda = recuperarTexto("txtBusquedaCedula");
-    let resultadoBusqueda = buscarEmpleado(cedulaBusqueda);
-    if ((resultadoBusqueda == null)) {
-        alert("EMPLEADO NO EXISTE")
-    } else {
-        mostrarTextoEnCaja("txtCedula", resultadoBusqueda.cedula);
-        mostrarTextoEnCaja("txtNombre", resultadoBusqueda.nombre);
-        mostrarTextoEnCaja("txtApellido", resultadoBusqueda.apellido);
-        mostrarTextoEnCaja("txtSueldo", resultadoBusqueda.sueldo);
-        deshabilitarComponenteBusqueda();
-    }
-}
-
-const limpiarBoton = function(){
-    mostrarTextoEnCaja("txtCedula", "");
-    mostrarTextoEnCaja("txtNombre", "");
-    mostrarTextoEnCaja("txtApellido", "");
-    mostrarTextoEnCaja("txtSueldo", "");
-    mostrarTextoEnCaja("txtBusquedaCedula", "");
-    mostrarTextoEnCaja("txtBusquedaCedula", "");
-    habilitarComponente("btnNuevo");
-    deshabilitarComponente("btnGuardar");
 }
