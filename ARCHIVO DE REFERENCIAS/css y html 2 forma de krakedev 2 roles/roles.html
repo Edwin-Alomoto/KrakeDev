@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="roles.js"></script>
+    <script src="utilitarios.js"></script>
+    <link rel="stylesheet" href="roles.css" />
+  </head>
+
+  <body onload="mostrarOpcionRol()">
+    <!-----nuevo evento ONLOAD se activa cuando se termina de cargar la pagina--->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- inicio del menu de la pagina -->
+    <!-- son solo botones -->
+    <div class="menu">
+      <!-- primer boton -->
+      <div class="contenedorBoton">
+        <input
+          type="button"
+          value="EMPLEADO"
+          class="estiloBoton"
+          onclick="mostrarOpcionEmpleado()"
+        />
+      </div>
+      <!-- segundo boton -->
+      <div class="contenedorBoton">
+        <input
+          type="button"
+          value="ROL"
+          class="estiloBoton"
+          onclick="mostrarOpcionRol()"
+        />
+      </div>
+      <!-- tercera boton -->
+      <div class="contenedorBoton">
+        <input
+          type="button"
+          value="RESUMEN"
+          class="estiloBoton"
+          onclick="mostrarOpcionResumen()"
+        />
+      </div>
+    </div>
+    <!-- menu de la pagina  -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- Del boton empleado principal hay dos parte aqui-->
+    <div id="divEmpleado">
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <div class="principal">
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- caja de texto y boton de busqueda parte 1 -->
+        <div class="area">
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!-- titulo y ingreso de cedula -->
+          <div class="ingresoDatos">
+            <div class="tituloCampo">CEDULA</div>
+            <div>
+              <input type="text" class="cajaTexto" id="txtBusquedaCedula" />
+              <!-- muestra errores -->
+              <div class="error" id="lblErrorBusqueda"></div>
+            </div>
+          </div>
+          <!-- titulo y ingreso de cedula termina aca-->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!-- boton de busqueda -->
+          <div class="contenedorBoton">
+            <input
+              type="button"
+              value="BUSCAR"
+              class="estiloBoton"
+              onclick="ejecutarBusqueda()"
+            />
+          </div>
+          <!--  -->
+          <!--  -->
+        </div>
+        <!-- caja de textoy boton de busqueda parte 1 termina aca-->
+        <!--  -->
+        <!--  -->
+        <!-- ingreso de datos y botones parte 2 -->
+        <div class="area">
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!-- ingreso de cedula -->
+          <div class="ingresoDatos">
+            <div class="tituloCampo">CEDULA</div>
+            <div>
+              <input type="text" class="cajaTexto" id="txtCedula" />
+              <!-- mensaje de error -->
+              <div class="error" id="lblErrorCedula"></div>
+            </div>
+          </div>
+          <!-- ingreso de cedula terminada -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!-- ingreso de nombre -->
+          <div class="ingresoDatos">
+            <div class="tituloCampo">NOMBRE</div>
+            <div>
+              <input type="text" class="cajaTexto" id="txtNombre" />
+              <!-- mensaje de error -->
+              <div class="error" id="lblErrorNombre"></div>
+            </div>
+          </div>
+          <!-- ingreso de nombre terminado-->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!-- ingreso de apellido  -->
+          <div class="ingresoDatos">
+            <div class="tituloCampo">APELLIDO</div>
+            <div>
+              <input type="text" class="cajaTexto" id="txtApellido" />
+              <!-- mensaje de error -->
+              <div class="error" id="lblErrorApellido"></div>
+            </div>
+          </div>
+          <!-- ingreso de apellido terminado  -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!-- ingreso de sueldo -->
+          <div class="ingresoDatos">
+            <div class="tituloCampo">SUELDO</div>
+            <div>
+              <input type="text" class="cajaTexto" id="txtSueldo" />
+              <!-- mensaje de error -->
+              <div class="error" id="lblErrorSueldo"></div>
+            </div>
+          </div>
+          <!-- ingreso de sueldo terminado -->
+          <!--  -->
+          <!--  -->
+          <!--  -->
+          <!-- botones -->
+          <div class="botones">
+            <!--  -->
+            <!--  -->
+            <!-- boton 1 -->
+            <div class="contenedorBoton">
+              <input
+                type="button"
+                value="NUEVO"
+                class="estiloBoton"
+                id="btnNuevo"
+                onclick="ejecutarNuevo()"
+              />
+            </div>
+            <!-- boton 1 terminado -->
+            <!--  -->
+            <!--  -->
+            <!-- boton 2  -->
+            <div class="contenedorBoton">
+              <input
+                type="button"
+                value="GUARDAR"
+                class="estiloBoton"
+                id="btnGuardar"
+                onclick="guardar()"
+              />
+            </div>
+            <!-- boton 2 terminado -->
+            <!--  -->
+            <!--  -->
+            <!--  -->
+            <!-- boton 3 -->
+            <div class="contenedorBoton">
+              <input
+                type="button"
+                value="LIMPIAR"
+                class="estiloBoton"
+                onclick="limpiarBoton()"
+              />
+            </div>
+            <!-- boton 3 terminado -->
+          </div>
+          <!-- botones terminado -->
+          <!--  -->
+          <!--  -->
+
+          <div id="tablaEmpleados" class="areaTabla"></div>
+        </div>
+        <!-- ingreso de datos y botones parte 2 -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- tabla -->
+        <div class="logoEscuela">
+          <img src="./imagenes/empleados.avif" width="80%" />
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+      </div>
+      <!--  -->
+      <!--  -->
+      <!--  -->
+    </div>
+    <!-- Del boton empleado principal hay dos parte aqui termina aqui-->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <div id="divRol">
+      <div class="principal">
+        <div class="area">
+          <div class="ingresoDatos">
+            <div class="tituloCampo">CEDULA</div>
+            <div>
+              <input type="text" class="cajaTexto" id="txtBusquedaCedula2" />
+              <div class="error" id="lblErrorBusqueda"></div>
+            </div>
+          </div>
+          <div class="contenedorBoton">
+            <input
+              type="button"
+              value="BUSCAR"
+              class="estiloBoton"
+              onclick="buscarPorRol()"
+            />
+          </div>
+        </div>
+
+        <div class="area">
+          <div class="ingresoDatos">
+            <div class="tituloCampo">CEDULA</div>
+            <div>
+              <div class="info" id="infoCedula"></div>
+            </div>
+          </div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">NOMBRE</div>
+            <div>
+              <div class="info" id="infoNombre"></div>
+            </div>
+          </div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">SUELDO</div>
+            <div>
+              <div class="info" id="infoSueldo"></div>
+            </div>
+          </div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">DESCUENTOS</div>
+            <div>
+              <input type="text" class="cajaTexto" id="txtDescuentos" />
+              <div class="error" id="lblErrorDescuentos"></div>
+            </div>
+          </div>
+          <div class="botones">
+            <div class="contenedorBoton">
+              <input
+                type="button"
+                value="CALCULAR"
+                class="estiloBoton"
+                onclick="calcularRol()"
+              />
+            </div>
+          </div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">APORTE IESS</div>
+            <div>
+              <div class="info" id="infoIESS">0.0</div>
+            </div>
+          </div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">TOTAL A PAGAR</div>
+            <div>
+              <div class="info" id="infoPago">0.0</div>
+            </div>
+          </div>
+          <div class="botones">
+            <div class="contenedorBoton">
+              <input
+                type="button"
+                value="GUARDAR"
+                class="estiloBoton"
+                id="btnGuadarRol"
+                onclick="guardarRol()"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="logoEscuela">
+          <img src="./imagenes/roles.jpg" width="80%" />
+        </div>
+      </div>
+    </div>
+
+    <div id="divResumen">
+      <div class="principal">
+        <div class="area"></div>
+        <div class="area">
+          <div id="tablaResumen" class="areaTabla"></div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">TOTAL A PAGAR</div>
+            <div>
+              <div class="info" id="infoTotalPago">0.0</div>
+            </div>
+          </div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">APORTE EMPRESA</div>
+            <div>
+              <div class="info" id="infoAporteEmpresa">0.0</div>
+            </div>
+          </div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">APORTE EMPLEADO</div>
+            <div>
+              <div class="info" id="infoAporteEmpleado">0.0</div>
+            </div>
+          </div>
+          <div class="ingresoDatos">
+            <div class="tituloCampo">TOTAL NOMINA</div>
+            <div>
+              <div class="info" id="infoNomina">0.0</div>
+            </div>
+          </div>
+        </div>
+        <div class="logoEscuela">
+          <img src="./imagenes/resumen.png" width="80%" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

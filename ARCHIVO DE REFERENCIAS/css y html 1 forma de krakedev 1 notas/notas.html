@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="notas.css" />
+    <script src="notas.js"></script>
+    <script src="utilitarios.js"></script>
+  </head>
+
+  <body>
+    <!-- caja principal -->
+    <div class="principal">
+      <div class="logoEscuela">
+        <img src="./imagenes/logoKrakeDev.png" width="80%" />
+      </div>
+      <!--  -->
+      <!--  -->
+      <!-- cajas de texto y titulo para aquellas cajas y ademas botones -->
+      <div class="contenido">
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- titulo principal -->
+        <div class="titulo">PROMEDIO DE NOTAS</div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- caja de texto 1 y su titulo -->
+        <div class="ingresoDatos">
+          <div class="tituloCampo">NOTA 1</div>
+          <div>
+            <input type="text" class="cajaTexto" id="txtNota1" />
+            <!-- mensaje de error -->
+            <div class="error" id="lblError1"></div>
+          </div>
+        </div>
+        <!-- caja de texto 1 y su titulo termina aca -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- caja de texto 2 y su titulo -->
+        <div class="ingresoDatos">
+          <div class="tituloCampo">NOTA 2</div>
+          <div>
+            <input type="text" class="cajaTexto" id="txtNota2" />
+            <!-- mensaje de error -->
+            <div class="error" id="lblError2"></div>
+          </div>
+        </div>
+        <!-- caja de texto 2 y su titulo termina aca -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- caja de texto 3 y su titulo termina aca -->
+        <div class="ingresoDatos">
+          <div class="tituloCampo">NOTA 3</div>
+          <div>
+            <input type="text" class="cajaTexto" id="txtNota3" />
+            <!-- mensaje de error -->
+            <div class="error" id="lblError3"></div>
+          </div>
+        </div>
+        <!-- caja de texto 3 y su titulo termina aca -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- botones -->
+        <div class="botones">
+          <!-- boton 1 -->
+          <div class="contenedorBoton">
+            <input
+              type="button"
+              value="CALCULAR PROMEDIO"
+              class="estiloBoton"
+              onclick="calcular();"
+            />
+          </div>
+          <!-- boton 1 termina  -->
+        </div>
+        <!-- termina el boton -->
+      </div>
+      <!-- aqui termina la caja de texto, botones -->
+
+      <div class="areaResultado">
+        <div class="resultado">
+          <div>PROMEDIO:</div>
+          <div id="lblResultado">0.0</div>
+        </div>
+
+        <div class="imagenResultado">
+          <img src="./imagenes/notas.png" width="50%" />
+        </div>
+      </div>
+    </div>
+    <!-- caja principal termina aca -->
+  </body>
+</html>
